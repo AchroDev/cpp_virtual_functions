@@ -25,21 +25,23 @@ public:
     std::string GetName() { return m_Name; }
 };
 
+// Example function showing the issue a bit better as anything with PrintName will use the Type 'Entity'
+void PrintName(Entity *entity)
+{
+    std::cout << entity->GetName() << std::endl;
+};
+
 int main()
 {
     // created new Entity
     Entity *e = new Entity;
     // print the GetName from the Entity
-    std::cout << e->GetName() << std::endl;
+    PrintName(e);
 
     // created new Player
     Player *p = new Player("AchroDev");
     // print the GetName from the Player member
-    std::cout << p->GetName() << std::endl;
-
-    // Example of trying to refer to the Player as if it was an Entity
-    Entity *entity = p;
-    std::cout << entity->GetName() << std::endl; // Prints Entity instead of the Player name because it has the type Entity
+    PrintName(p);
 
     std::cin.get();
 }
