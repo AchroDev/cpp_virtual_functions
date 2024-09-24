@@ -37,5 +37,9 @@ int main()
     // print the GetName from the Player member
     std::cout << p->GetName() << std::endl;
 
+    // Example of trying to refer to the Player as if it was an Entity
+    Entity *entity = p;
+    std::cout << entity->GetName() << std::endl; // Prints Entity instead of the Player name because it has the type Entity
+
     std::cin.get();
 }
