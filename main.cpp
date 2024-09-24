@@ -23,7 +23,7 @@ public:
         : m_Name(name) {}
 
     // method 'GetName' again to return the name that is the member
-    std::string GetName() { return m_Name; }
+    std::string GetName() override { return m_Name; } // using 'override' helps to prevent bugs and know that it is overwriting something
 };
 
 // Example function showing the issue a bit better as anything with PrintName will use the Type 'Entity'
