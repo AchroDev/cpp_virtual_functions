@@ -6,7 +6,8 @@ class Entity
 {
 public:
     // public method called 'GetName' that just returns "Entity"
-    std::string GetName() { return "Entity"; }
+    // now marked as virtual to generate a vtable and allows being overwritten to the correct function
+    virtual std::string GetName() { return "Entity"; }
 };
 
 // Example Player class that inherits the Entity class, i.e. subclass
